@@ -90,7 +90,7 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
 
         public void ResetExperience()
         {
-            Experience = 0; //TODO: Check with Mirco if i have to reset Level too
+            Experience = 0;
         }
 
         public void TakeDamage(int damageTaken)
