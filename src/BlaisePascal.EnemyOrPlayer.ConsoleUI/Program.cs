@@ -19,7 +19,7 @@ namespace BlaisePascal.EnemyOrPlayer.UIConsole
 
             Console.WriteLine($"Il nemico è vivo? {enemy.IsAlive()}");
 
-            Player player = new Player("Mario");
+            Player player = new Player("Link");
 
             int experience = player.Experience;
 
