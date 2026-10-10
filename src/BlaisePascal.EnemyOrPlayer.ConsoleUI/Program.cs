@@ -1,7 +1,7 @@
 ﻿using BlaisePascal.EnemyOrPlayer.Domain;
 using System.Numerics;
 
-namespace BlaisePascal.Lesson1.UIConsole
+namespace BlaisePascal.EnemyOrPlayer.UIConsole
 {
     internal class Program // This is a class
     {
