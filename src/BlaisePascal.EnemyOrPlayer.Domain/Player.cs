@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace BlaisePascal.EnemyOrPlayer.Domain
 {
     public class Player
     {
+        public static int PlayerCounter = 00001;
+
         private int _level;
 
         public string Name { get; set; }
@@ -17,6 +20,8 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
             {
                 if (value < 1)
                     _level = 1;
+                else
+                    _level = value;
             }
         }
 
@@ -30,6 +35,19 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
 
         public int Gold { get; private set; }
 
+        public Player()
+        {
+            Name = $"Player_{PlayerCounter}";
+            Level = 1;
+            Experience = 0;
+            MaxHealth = 100;
+            Health = MaxHealth;
+            IsAlive = true;
+            Gold = 0;
+
+            PlayerCounter++;
+        }
+
         public Player(string name)
         {
             Name = name;
@@ -39,6 +57,8 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
             Health = MaxHealth;
             IsAlive = true;
             Gold = 0;
+
+            PlayerCounter++;
         }
 
         public void AddExperience(int expAdded)
@@ -67,6 +87,7 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
             if (Health < 0)
             {
                 Health = 0;
+                IsAlive = false;
             }
         }
 

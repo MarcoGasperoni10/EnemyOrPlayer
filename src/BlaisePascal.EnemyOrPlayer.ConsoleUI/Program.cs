@@ -7,38 +7,19 @@ namespace BlaisePascal.EnemyOrPlayer.UIConsole
     {
         public static void Main()
         {
-            Enemy enemy = new Enemy("Goblin", 100, 25);
+            Player player1 = new Player();
+            Player player2 = new Player();
+            Player player3 = new Player();
+            Player player4 = new Player();
+            Player player5 = new Player();
+            Player player6 = new Player();
 
-            Console.WriteLine(enemy.Name);
-
-            Console.WriteLine($"Il nemico è vivo? {enemy.IsAlive()}");
-
-            enemy.TakeDamage(30);
-
-            Console.WriteLine(enemy.Name);
-
-            Console.WriteLine($"Il nemico è vivo? {enemy.IsAlive()}");
-
-            Player player = new Player("Link");
-
-            int experience = player.Experience;
-
-            Console.WriteLine($"Esperienza dopo l'aggiunta: {experience}");
-
-            player.AddGold(50);
-            Console.WriteLine($"Oro del giocatore: {player.Gold}");
-
-            player.TakeDamage(30);
-
-            player.Heal(20);
-
-            player.TakeDamage(100);
-
-            Console.WriteLine($"Il giocatore è vivo? {player.IsAlive}");
-
-            player.ResetHealth();
-
-            player.ResetExperience();
+            Console.WriteLine(player1.Name);
+            Console.WriteLine(player2.Name);
+            Console.WriteLine(player3.Name);
+            Console.WriteLine(player4.Name);
+            Console.WriteLine(player5.Name);
+            Console.WriteLine(player6.Name);
         }
     }
 }
