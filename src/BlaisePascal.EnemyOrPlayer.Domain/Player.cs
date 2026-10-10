@@ -86,6 +86,7 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
         public void ResetHealth()
         {
             Health = MaxHealth;
-        }
+            IsAlive = true;
+        }    
     }
 }
