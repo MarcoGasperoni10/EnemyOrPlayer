@@ -3,9 +3,8 @@ using System.Numerics;
 
 namespace BlaisePascal.EnemyOrPlayer.UIConsole
 {
-    internal class Program // This is a class
+    internal class Program
     {
-        // Entrance function to execute code
         public static void Main()
         {
             Enemy enemy = new Enemy("Goblin", 100, 25);
