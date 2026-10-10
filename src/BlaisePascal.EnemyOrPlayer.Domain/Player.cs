@@ -6,19 +6,9 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
 {
     public class Player
     {
-        private string _name;
         private int _level;
-        private int _experience;
-        private int _health;
-        private int _maxHealth;
-        private bool _isAlive;
-        private int _gold;
 
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
+        public string Name { get; set; }
 
         public int Level
         {
@@ -30,40 +20,15 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
             }
         }
 
-        public int Experience
-        {
-            get { return _experience; }
-            private set { _experience = value; }
-        }
+        public int Experience { get; private set; }
 
-        public int Health
-        {
-            get { return _health; }
-            private set
-            {
-                _health = value;
-                if (_health <= 0)
-                    IsAlive = false;
-            }
-        }
+        public int Health { get; private set; }
 
-        public int MaxHealth
-        {
-            get { return _maxHealth; }
-            private set { _maxHealth = value; }
-        }
+        public int MaxHealth { get; private set; }
 
-        public bool IsAlive
-        {
-            get { return _isAlive; }
-            private set { _isAlive = value; }
-        }
+        public bool IsAlive { get; private set; }
 
-        public int Gold
-        {
-            get { return _gold; }
-            private set { _gold = value; }
-        }
+        public int Gold { get; private set; }
 
         public Player(string name)
         {
