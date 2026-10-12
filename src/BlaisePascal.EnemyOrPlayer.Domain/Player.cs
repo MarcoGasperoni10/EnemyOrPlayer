@@ -50,6 +50,8 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
 
         public Player(string name)
         {
+            if (String.IsNullOrWhiteSpace(name) == true)
+                throw new ArgumentException($"value not allowed {nameof(name)}: {name}");
             Name = name;
             Level = 1;
             Experience = 0;
@@ -66,7 +68,7 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
             if (expAdded < 0)
                 throw new ArgumentException($"value not allowed {nameof(expAdded)}: {expAdded}");
             Experience += expAdded;
-            if (Experience >= 100)
+            while(Experience >= 100)
             {
                 Experience -= 100;
                 Level += 1;
@@ -102,6 +104,7 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
         {
             if (goldAmount < 0)
                 throw new ArgumentException($"value not allowed {nameof(goldAmount)}: {goldAmount}");
+            Gold += goldAmount;
         }
 
         public void ResetHealth()

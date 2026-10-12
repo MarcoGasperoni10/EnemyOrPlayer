@@ -35,8 +35,14 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
 
         public Enemy(string name, int health, int damage)
         {
+            if (String.IsNullOrWhiteSpace(name) == true)
+                throw new ArgumentException($"value not allowed {nameof(name)}: {name}");
             Name = name;
+            if (Health < 0)
+                throw new ArgumentException($"value not allowed {nameof(health)}: {health}");
             Health = health;
+            if (Damage < 0)
+                throw new ArgumentException($"value not allowed {nameof(damage)}: {damage}");
             Damage = damage;
         }
 
@@ -47,10 +53,9 @@ namespace BlaisePascal.EnemyOrPlayer.Domain
 
         public void TakeDamage(int damage)
         {
-            if (damage > 0)
-            {
-                Health -= damage;
-            }
+            if (damage < 0)
+                throw new ArgumentException($"value not allowed {nameof(damage)}: {damage}");
+            Health -= damage;
         }
     }
 }
